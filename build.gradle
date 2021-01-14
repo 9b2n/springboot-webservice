@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.4.1'
+        springBootVersion = '2.1.9.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -25,9 +25,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
