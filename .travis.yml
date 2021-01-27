@@ -16,6 +16,22 @@ before_install:
 
 script: "./gradlew clean build"
 
+before_deploy:
+  - zip -r gyubin-webservice-build *
+  - mkdir -p deploy
+  - mv springboot-webservice.zip deploy/springboot-webservice.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+    secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+    bucket: gyubin-webservice-build # S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private으로
+    local_dir: deploy # before_deploy에서 생성한 디렉토리
+    wait-until-deploy: true
+
 # CI 실행완료 시 메일로 알람
 notifications:
   email:
