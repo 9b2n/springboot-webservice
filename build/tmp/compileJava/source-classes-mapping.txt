@@ -1,5 +1,5 @@
-com/jojoldu/book/springboot/config/auth/SecurityConfig.java
- com.jojoldu.book.springboot.config.auth.SecurityConfig
+com/jojoldu/book/springboot/web/ProfileController.java
+ com.jojoldu.book.springboot.web.ProfileController
 com/jojoldu/book/springboot/Application.java
  com.jojoldu.book.springboot.Application
 com/jojoldu/book/springboot/config/auth/CustomOAuth2UserService.java
@@ -51,3 +51,5 @@ com/jojoldu/book/springboot/domain/user/User.java
  com.jojoldu.book.springboot.domain.user.User$UserBuilder
 com/jojoldu/book/springboot/domain/user/Role.java
  com.jojoldu.book.springboot.domain.user.Role
+com/jojoldu/book/springboot/config/auth/SecurityConfig.java
+ com.jojoldu.book.springboot.config.auth.SecurityConfig
