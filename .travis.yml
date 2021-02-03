@@ -23,7 +23,7 @@ before_deploy:
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deploy * # before-deploy로 이동후 전체 압축
   - cd ../ && mkdir -p deploy # 상위 디렉토리로 이동후 deploy 디렉토리 생성
-  - mv before-deploy/before-deploy.zip deploy/springboot-webservice.zip
+  - mv before-deploy/before-deploy.zip deploy/gyubin-springboot-webservice.zip
 
 deploy:
   - provider: s3
@@ -40,7 +40,7 @@ deploy:
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
     bucket: gyubin-webservice-build # S3 버킷
-    key: springboot-webservice.zip # 빌드 파일을 압축해서 전달
+    key: gyubin-springboot-webservice.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip # 압축 확장자
     application: gyubin-springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
     deployment_group: gyubin-springboot-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
